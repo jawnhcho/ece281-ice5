@@ -103,7 +103,7 @@ begin
         w_reset <= '1';  wait for k_clk_period;
             assert w_floor = "0010" report "bad reset" severity failure; 
         -- clear reset
-        w_reset <= '0';  wait for k_clk_period;
+        w_reset <= '0'; w_stop <= '1'; wait for k_clk_period;
             assert w_floor = "0010" report "bad reset" severity failure;       
 		
 		-- active UP signal

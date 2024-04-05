@@ -101,8 +101,8 @@ begin
                 s_floor2 when (f_Q=s_floor1 and i_up_down='1') else
                 s_floor3 when (f_Q=s_floor4 and i_up_down='0') else
                 s_floor2 when (f_Q=s_floor3 and i_up_down='0') else
-                s_floor1 when (f_Q=s_floor2 and i_up_down='0');-- going down
-                --s_floor2 when (i_up_down='0'); -- default case
+                s_floor1 when (f_Q=s_floor2 and i_up_down='0') else-- going down
+                f_Q; -- default case
                 
 	-- Output logic
     with f_Q select
